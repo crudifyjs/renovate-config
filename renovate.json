@@ -1,0 +1,68 @@
+{
+  "extends": [
+    "config:base",
+    ":prHourlyLimitNone",
+    ":prConcurrentLimitNone",
+    ":masterIssue",
+    ":separateMultipleMajorReleases",
+    ":pinOnlyDevDependencies"
+  ],
+  "semanticCommitType": "deps",
+  "semanticCommitScope": null,
+  "prCreation": "status-success",
+  "stabilityDays": 3,
+  "packageRules": [
+    {
+      "depTypeList": [
+        "dependencies"
+      ],
+      "semanticCommitType": "deps",
+      "semanticCommitScope": null
+    },
+    {
+      "depTypeList": [
+        "devDependencies"
+      ],
+      "semanticCommitType": "chore",
+      "semanticCommitScope": "deps"
+    },
+    {
+      "depTypeList": [
+        "peerDependencies"
+      ],
+      "enabled": false
+    },
+    {
+      "packageNames": [
+        "typescript",
+        "bili"
+      ],
+      "packagePatterns": [
+        "rollup",
+        "babel"
+      ],
+      "semanticCommitType": "build",
+      "semanticCommitScope": "deps"
+    },
+    {
+      "packagePatterns": [
+        "jest",
+        "fast-check"
+      ],
+      "excludePackageNames": [
+        "eslint-plugin-jest"
+      ],
+      "semanticCommitType": "test",
+      "semanticCommitScope": "deps"
+    },
+    {
+      "packageNames": [
+        "jest",
+        "babel-jest",
+        "ts-jest",
+        "@types/jest"
+      ],
+      "groupName": "jest"
+    }
+  ]
+}
