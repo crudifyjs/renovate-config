@@ -47,7 +47,8 @@
     {
       "packagePatterns": [
         "jest",
-        "fast-check"
+        "fast-check",
+        "mock"
       ],
       "excludePackageNames": [
         "eslint-plugin-jest"
